@@ -1,7 +1,7 @@
 {% if section.settings['show-announcement'] %}
     <section>
         <div class="announcement-bar-container">
-            <p>30% Off Ends Tonight! No Code Needed</p>
+            <p>{{ section.settings['announcement-text'] }}</p>
         </div>
     </section>
 {% endif %}
@@ -27,19 +27,25 @@
                 "type": "color",
                 "id": "text-color",
                 "label": "Text Color",
-                "default": "#000000"
+                "default": "#ffffff"
             },
             {
                 "type": "color",
                 "id": "background-color",
                 "label": "Background Color",
-                "default": "#f8d7da"
+                "default": "#000000"
             },
             {
                 "type": "checkbox",
                 "id": "show-announcement",
                 "label": "Show Announcement Bar",
                 "default": true
+            },
+            {
+                "type": "text",
+                "id": "announcement-text",
+                "label": "Text",
+                "default": "30% Off Ends Tonight! No Code Needed"
             }
         ]
     }
