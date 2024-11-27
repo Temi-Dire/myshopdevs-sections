@@ -1,0 +1,46 @@
+{% if section.settings['show-announcement'] %}
+    <section>
+        <div class="announcement-bar-container">
+            <p>30% Off Ends Tonight! No Code Needed</p>
+        </div>
+    </section>
+{% endif %}
+
+<style>
+    .announcement-bar-container {
+        background-color: {{  section.settings['background-color'] }};
+        color: {{ section.settings['text-color'] }};
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+{% schema %}
+    {
+        "name": "Announcement Bar",
+        "settings": [
+            {
+                "type": "color",
+                "id": "text-color",
+                "label": "Text Color",
+                "default": "#000000"
+            },
+            {
+                "type": "color",
+                "id": "background-color",
+                "label": "Background Color",
+                "default": "#f8d7da"
+            },
+            {
+                "type": "checkbox",
+                "id": "show-announcement",
+                "label": "Show Announcement Bar",
+                "default": true
+            }
+        ]
+    }
+{% endschema %}
